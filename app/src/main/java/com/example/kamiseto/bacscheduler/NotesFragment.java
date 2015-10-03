@@ -84,23 +84,22 @@ public class NotesFragment extends Fragment {
                 notex = edNote.getText().toString();
                 Toast.makeText(getActivity(), titlex, Toast.LENGTH_LONG).show();
                 BufferedWriter writer = null;
-                //if (notex!=null) android_versions.set(1,notex);
 
 
                 try {
                     FileOutputStream openedFile = getActivity().openFileOutput("supernotes", Context.MODE_WORLD_WRITEABLE);
 
                     writer = new BufferedWriter(new OutputStreamWriter(openedFile));
-
+                    //3. Check if notex is null or empty
                     if (notex != null)
                         if (!notex.isEmpty() || notex != "") {
                             if (ok)
                             {
+                                //4. see if there was no note saved before
                                 adapter.clear();
                                 ok=false;
                             }
                             android_versions.add(notex);
-                            //adapter.add(notex);
                             adapter.notifyDataSetChanged();
                         }
 
@@ -108,12 +107,6 @@ public class NotesFragment extends Fragment {
                     writer.append(titlex + eol);
                     writer.append(notex + eol);
                     writer.close();
-
-                    //ct++;
-
-
-                    //go to ReadActivity to read the file
-                    //gotoRead();
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -134,56 +127,8 @@ public class NotesFragment extends Fragment {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android_versions);
         lista.setAdapter(adapter);
 
-        note = notex;
-        title = titlex;
-
-        //3. after saving, we will read the data
-//        BufferedWriter writer = null;
-//
-//        try {
-//            FileOutputStream openedFile = openFileOutput("supernotes", MODE_WORLD_WRITEABLE);
-//
-//            writer = new BufferedWriter(new OutputStreamWriter(openedFile));
-//
-//            String eol = System.getProperty("line.separator");
-//            writer.write(title + eol);
-//            writer.write(note + eol);
-//            writer.close();
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         return rootView;
     }
 
-    private void gotoRead() {
-        Intent i = new Intent(getActivity(), readActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(i);
-    }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getActivity().getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 }
 
