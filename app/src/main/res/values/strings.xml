@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Bac Scheduler</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Renew">New Button</string>
+    <string name="dialog_fire_missiles">Small Text</string>
+    <string name="fire">New Button</string>
+    <string name="cancel">New Button</string>
+    <string name="example">example</string>
+    <string name="accept">accept</string>
+    <string name="decline">decline</string>
+    <string name="alert_dialog_ok" />
+    <string name="alert_dialog_cancel" />
+    <string name="icon_content_description" />
+    <string name="aim">Aim</string>
+    <string name="bebo">Bebo</string>
+    <string name="youtube">Youtube</string>
+    <string name="aim_description">32€ bill</string>
+    <string name="bebo_description">43€ bill</string>
+    <string name="youtube_description">44€ bill</string>
+    <string name="aim_pass">startrek</string>
+    <string name="bebo_pass">starwars</string>
+    <string name="youtube_pass">bullshit</string>
+    <string name="title">Title</string>
+    <string name="note">Text</string>
+    <string name="save">Save</string>
+
+    <!-- Sliding Menu items -->
+    <string-array name="nav_drawer_items">
+        <item >Progress</item>
+        <item >Scheduler</item>
+        <item >Notes</item>
+        <item >Settings</item>
+        <item >Share</item>
+    </string-array>
+
+    <!-- Sliding Menu item icons -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/progress</item>
+        <item>@drawable/scheduler</item>
+        <item>@drawable/notes</item>
+        <item>@drawable/settings</item>
+        <item>@drawable/share</item>
+    </array>
+
+    <!-- Button text -->
+    <string name="btn_logout_from_google">Logout from Google</string>
+    <string name="btn_revoke_access">Revoke Access</string>
+
+
+</resources>
